@@ -1,0 +1,430 @@
+{
+    "code": 1,
+    "message": "",
+    "data": [
+        {
+            "title": "网站首页",
+            "level": 0,
+            "url": "",
+            "path": "/",
+            "argId": "",
+            "navType": -1,
+            "children": null
+        },
+        {
+            "title": "医院概况",
+            "level": 0,
+            "url": "/#/content/2021041711203400029751773",
+            "path": "/content",
+            "argId": "2021041711203400029751773",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "本部院区",
+                    "level": 1,
+                    "url": "/#/content/2021041711203400029751773",
+                    "path": "/content",
+                    "argId": "2021041711203400029751773",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "北部院区",
+                    "level": 1,
+                    "url": "/#/content/2021041711214866449225343",
+                    "path": "/content",
+                    "argId": "2021041711214866449225343",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "医院文化",
+                    "level": 1,
+                    "url": "/#/gk/wh/list/2021030318015019765005800",
+                    "path": "/gk/wh/list",
+                    "argId": "2021030318015019765005800",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "历史沿革",
+                    "level": 1,
+                    "url": "/#/gk/history/list/2021040320035477310098036",
+                    "path": "/gk/history/list",
+                    "argId": "2021040320035477310098036",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "组织架构",
+                    "level": 1,
+                    "url": "/#/gk/organization/2021030417290400145781664",
+                    "path": "/gk/organization",
+                    "argId": "2021030417290400145781664",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "医联体",
+                    "level": 1,
+                    "url": "/#/gk/ylt/list/2021041114404478373079117",
+                    "path": "/gk/ylt/list",
+                    "argId": "2021041114404478373079117",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "联系我们",
+                    "level": 1,
+                    "url": "/#/content/2021041711434145763578424",
+                    "path": "/content",
+                    "argId": "2021041711434145763578424",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "党群工作",
+            "level": 0,
+            "url": "/#/dq/dw/list/2021041117175834541902386",
+            "path": "/dq/dw/list",
+            "argId": "2021041117175834541902386",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "党务公开",
+                    "level": 1,
+                    "url": "/#/dq/dw/list/2021041117175834541902386",
+                    "path": "/dq/dw/list",
+                    "argId": "2021041117175834541902386",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "纪检监察",
+                    "level": 1,
+                    "url": "/#/dq/jj/list/2021041117181816771995358",
+                    "path": "/dq/jj/list",
+                    "argId": "2021041117181816771995358",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "志愿服务",
+                    "level": 1,
+                    "url": "/#/dq/zy/list/2021041117183532969508697",
+                    "path": "/dq/zy/list",
+                    "argId": "2021041117183532969508697",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "主题教育",
+                    "level": 1,
+                    "url": "/#/dq/jy/list/2021041117185338533372998",
+                    "path": "/dq/jy/list",
+                    "argId": "2021041117185338533372998",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "医院荣誉",
+                    "level": 1,
+                    "url": "/#/dq/honor/2021040311412639176682357",
+                    "path": "/dq/honor",
+                    "argId": "2021040311412639176682357",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "新闻动态",
+            "level": 0,
+            "url": "/#/news/yy/list/2021030318022512588618000",
+            "path": "/news/yy/list",
+            "argId": "2021030318022512588618000",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "医院新闻",
+                    "level": 1,
+                    "url": "/#/news/yy/list/2021030318022512588618000",
+                    "path": "/news/yy/list",
+                    "argId": "2021030318022512588618000",
+                    "navType": 1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "科室导航",
+            "level": 0,
+            "url": "/#/dept/query/2021041117254895464853640",
+            "path": "/dept/query",
+            "argId": "2021041117254895464853640",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "科室查询",
+                    "level": 1,
+                    "url": "/#/dept/query/2021041117254895464853640",
+                    "path": "/dept/query",
+                    "argId": "2021041117254895464853640",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "专家团队",
+                    "level": 1,
+                    "url": "/#/dept/team/2021041117291169113102650",
+                    "path": "/dept/team",
+                    "argId": "2021041117291169113102650",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "重点专科",
+                    "level": 1,
+                    "url": "/#/dept/zd/list/2021030911434764547132442",
+                    "path": "/dept/zd/list",
+                    "argId": "2021030911434764547132442",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "特色科室",
+                    "level": 1,
+                    "url": "/#/dept/ts/list/2021030911595535155457925",
+                    "path": "/dept/ts/list",
+                    "argId": "2021030911595535155457925",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "司法鉴定",
+            "level": 0,
+            "url": "/#/content/2021041815051496652653640",
+            "path": "/content",
+            "argId": "2021041815051496652653640",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "业务范围",
+                    "level": 1,
+                    "url": "/#/content/2021041815051496652653640",
+                    "path": "/content",
+                    "argId": "2021041815051496652653640",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "组织机构",
+                    "level": 1,
+                    "url": "/#/sf/organization/2021041117432526677759891",
+                    "path": "/sf/organization",
+                    "argId": "2021041117432526677759891",
+                    "navType": -1,
+                    "children": null
+                },
+                {
+                    "title": "专家成员",
+                    "level": 1,
+                    "url": "/#/sf/team/2021041117440787656899682",
+                    "path": "/sf/team",
+                    "argId": "2021041117440787656899682",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "慈善公益",
+            "level": 0,
+            "url": "/#/cs/gj/list/2021041117463237444232981",
+            "path": "/cs/gj/list",
+            "argId": "2021041117463237444232981",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "国家救助",
+                    "level": 1,
+                    "url": "/#/cs/gj/list/2021041117463237444232981",
+                    "path": "/cs/gj/list",
+                    "argId": "2021041117463237444232981",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "省级救助",
+                    "level": 1,
+                    "url": "/#/cs/sj/list/2021041117464685426178816",
+                    "path": "/cs/sj/list",
+                    "argId": "2021041117464685426178816",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "市级救助",
+                    "level": 1,
+                    "url": "/#/cs/sj/list/2021041117470657864484326",
+                    "path": "/cs/sj/list",
+                    "argId": "2021041117470657864484326",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "专项救助",
+                    "level": 1,
+                    "url": "/#/cs/zx/list/2021041117472647350683815",
+                    "path": "/cs/zx/list",
+                    "argId": "2021041117472647350683815",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "惠民活动",
+                    "level": 1,
+                    "url": "/#/cs/hm/list/2021041117474123334360429",
+                    "path": "/cs/hm/list",
+                    "argId": "2021041117474123334360429",
+                    "navType": 1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "天使风采",
+            "level": 0,
+            "url": "/#/ts/hr/list/2021041117490077396364625",
+            "path": "/ts/hr/list",
+            "argId": "2021041117490077396364625",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "好人好事",
+                    "level": 1,
+                    "url": "/#/ts/hr/list/2021041117490077396364625",
+                    "path": "/ts/hr/list",
+                    "argId": "2021041117490077396364625",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "三院故事",
+                    "level": 1,
+                    "url": "/#/ts/gs/list/2021041117491346931931399",
+                    "path": "/ts/gs/list",
+                    "argId": "2021041117491346931931399",
+                    "navType": 1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "院士团队",
+            "level": 0,
+            "url": "/#/ys/team/2021041117503093128463606",
+            "path": "/ys/team",
+            "argId": "2021041117503093128463606",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "院士团队",
+                    "level": 1,
+                    "url": "/#/ys/team/2021041117503093128463606",
+                    "path": "/ys/team",
+                    "argId": "2021041117503093128463606",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "科研教学",
+            "level": 0,
+            "url": "/#/ky/xs/list/2021041117514159845676341",
+            "path": "/ky/xs/list",
+            "argId": "2021041117514159845676341",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "学术动态",
+                    "level": 1,
+                    "url": "/#/ky/xs/list/2021041117514159845676341",
+                    "path": "/ky/xs/list",
+                    "argId": "2021041117514159845676341",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "教研动态",
+                    "level": 1,
+                    "url": "/#/ky/jy/list/2021041117515305172154453",
+                    "path": "/ky/jy/list",
+                    "argId": "2021041117515305172154453",
+                    "navType": 1,
+                    "children": null
+                }
+            ]
+        },
+        {
+            "title": "公告通知",
+            "level": 0,
+            "url": "/#/gg/rc/list/2021041117525909421214223",
+            "path": "/gg/rc/list",
+            "argId": "2021041117525909421214223",
+            "navType": -1,
+            "children": [
+                {
+                    "title": "人才招聘",
+                    "level": 1,
+                    "url": "/#/gg/rc/list/2021041117525909421214223",
+                    "path": "/gg/rc/list",
+                    "argId": "2021041117525909421214223",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "招标信息",
+                    "level": 1,
+                    "url": "/#/gg/zb/list/2021041117535147779456398",
+                    "path": "/gg/zb/list",
+                    "argId": "2021041117535147779456398",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "物价信息",
+                    "level": 1,
+                    "url": "/#/gg/wj/list/2021041117540502290960907",
+                    "path": "/gg/wj/list",
+                    "argId": "2021041117540502290960907",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "药物临床试验招募",
+                    "level": 1,
+                    "url": "/#/gg/yw/list/2021041117542029231877272",
+                    "path": "/gg/yw/list",
+                    "argId": "2021041117542029231877272",
+                    "navType": 1,
+                    "children": null
+                },
+                {
+                    "title": "下载专区",
+                    "level": 1,
+                    "url": "/#/gg/file/download/2021041117552042461932042",
+                    "path": "/gg/file/download",
+                    "argId": "2021041117552042461932042",
+                    "navType": -1,
+                    "children": null
+                }
+            ]
+        }
+    ]
+}

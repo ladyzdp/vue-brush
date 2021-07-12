@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+// 文字溢出
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本溢出
+@mixin multilineEllipsis($lineHeight, $rows) {
+  height: $lineHeight * $rows;
+  line-height: $lineHeight;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 40px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAAAoCAYAAAAouML7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAFESURBVHic7dzrCsIwDIbhTGG7/yuOfzyMuVO7Zm2T9wERpMo0Hz3Y0UFERFVHEZnej3H2PK689tdGVafE9yzb7r33KSep6tmmplq4DutreJh++s/Rt6j/SyNJSnAoPr6WwalZfILXkbuGKjiTE5wrPQO9ihP0OMiyFRzmOthl1eOwAnNuLzgUH5tqznEIXseuBsey+ASrYdY9DsV36kxwWGHhzx1zHCbZDpUKDsUPZh4chiScdudynHA4khocig8RKd/jEKwg1oLDXAeHLOY4LL8DyL2tguIHV2uTk+B17kpw2OAM7Cg43F+MVS3vjhO8htW+WZ1wdKpEcCh+QJ/gsPxGkiJD1TAMR00InjMlDx1AICUnxwQrEE6rQJbSu+NMsoO4+7QKOFHjD0CC50BucCyHJILVgSuHDlgiPI2rvVeFTr0AJUZMBxSprXAAAAAASUVORK5CYII=") repeat-y;
+  }
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    height: 0;
+    display: table;
+    overflow: hidden;
+  }
+}
+%clearfix {
+  @include clearfix;
+}
+
+// 滚动条
+@mixin scrollXY {
+  overflow: auto;
+}
+
+%scrollXY {
+  @include scrollXY;
+}
+
+// 竖向滚动条
+@mixin scrollY {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+%scrollY {
+  @include scrollY;
+}
+
+// 横向滚动条
+@mixin scrollX {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+%scrollX {
+  @include scrollX;
+}
+
+// 无序列表
+@mixin listUl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%listUl {
+  @include listUl;
+}
+
+// 去掉内外边距
+@mixin noBlank {
+  margin: 0;
+  padding: 0;
+}
+%noBlank {
+  @include noBlank;
+}
+
+// 竖细线及缩放
+%lineX {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-right: 1px solid #E3E3E3;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    @include scaleX(0.5); 
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    @include scaleX(0.33); 
+  }
+}
+
+// 横细线及缩放
+%lineY {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #E3E3E3;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    @include scaleY(0.5); 
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    @include scaleY(0.33); 
+  }
+}
+

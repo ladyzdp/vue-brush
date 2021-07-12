@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+// switch
+$outputScrollbar:   false !default; // 输出自定义滚动条样式
+$focusPicNoRepeat:  true !default; // 焦点图不平铺背景
+
+// colors
+$bodyBg:            #F8F7F7 !default;
+$bodygraybj:        #fff !default;
+$mainBlue:          #BE1F29 !default;
+$mainGreen:         #8FC500 !default;
+$disGreen:          #b3b3b3 !default;
+$warnRed:           #fc3a16 !default;
+$rightGreen:        #38ce7a !default;
+$fontBlack:         #333 !default;
+$fontDarkGray:      #666 !default;
+$fontBackGray:      #777 !default;
+$fontGray:          #999 !default;
+$fontLightGray:     #bbbbbb !default;
+$strokeLine:        #e5e5e5 !default; //描边
+$bgfontHover:       #E1F4FF !default;
+$disbtncolorbj:     #c3cdd7 !default;//按钮禁止点击的颜色
+$moneyColor:        #ff5824 !default;
+
+// size
+$topHeight:         3.3rem !default; //顶部栏高度
+$progresssHeight:   5rem !default; //头部高度
+$nextbtnHeight:   3.5rem !default; //下一步按钮的高度
+$margin-top:      .4rem  !default;//距离上一模块的距离
+
+$size: .86rem 1rem 1.1rem 1.2rem 1.3rem 1.5rem 1.6rem .7rem 2.1rem 2rem 3rem .5rem 4.7rem;
+$padding: 1.1rem 2.1rem 3rem;
+$hight:3rem 3.3rem 3.5rem 4rem 4.5rem 5rem 5.5rem;
+
+
+
+
+
+// wrap shadow
+%wrapShadow {
+  @include box-shadow(0 2px 6px #CCC);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=120, Color='#CCCCCC')";
+}
+//清楚浮动
+%clearfix{
+  content:".";
+  display:block;
+  font-size:0;
+  line-height:0;
+  height:0;
+  clear:both;
+  visibility:hidden
+}
+
+// scrollbar
+@if $outputScrollbar {
+   ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+   ::-webkit-scrollbar-track {
+    background: none;
+  }
+   ::-webkit-scrollbar-track-piece {
+    opacity: 0;
+  }
+   ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #5c6e82;
+    background: rgba(92, 110, 130, .6);
+  }
+}
+
+// 边框线
+%border-1px{
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+//定位
+%mainpos{
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow-y:scroll;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .idenfi-progress:after,.t-popup-bottom:after,.information-box p:before,.fill-tishi:after,.pay-box:after,.team-con .team-con-box:after,.address:before,.tab-title:before,.iphone-num:before
+  { 
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5); }
+ }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .idenfi-progress:after,.t-popup-bottom:after,.information-box:not(:last-child) p:before,.fill-tishi:after,.pay-box:after,.team-con .team-con-box:after,.address:before,.tab-title:before,.iphone-num:before
+  { 
+    -webkit-transform: scaleY(0.33); 
+    transform: scaleY(0.33); }
+ }
+
+//  遮罩层
+%zhezhao{
+  .t-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);z-index:10000;
+    .t-popup-bottom{
+      height:3rem;
+      position: relative;
+      &:after{
+        position: absolute;
+        top:0px;
+        border-top:solid 1px #eee;
+        @extend %border-1px;
+      }
+    }
+  }
+}
+// 文字溢出省略号
+%spillover{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:normal;
+  // 多行溢出
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;//限制块元素显示的文本行数
+  }
+//%placehoder 占位符  调用@extend
+.mb-10{margin-bottom:nth($size,1);}
+%equaldiv{
+  display: table-cell;
+  width: 1%;
+  text-align: center;
+}
+// common button
+%bigbtn{
+  padding:.8rem 0;
+  display: inline-block;
+  font-size:nth($size,5);
+  color:#fff;
+  text-align: center;
+  @include border-radius($radius:.4rem);
+  background:#BE1F29;
+}
+
+
+%loading{
+  &:disabled {
+    position: relative;
+    background: auto;
+    opacity: 0.65;
+    backdrop-filter: blur(2px);
+
+    &:before {
+      content: "";
+      position: absolute;
+      margin-top: rem(-20);
+      margin-left: rem(-20);
+      top:50% ;
+      left:50%;
+      width: rem(20);
+      height: rem(20);
+      border-radius: 50%;
+      border: rem(10) #fff solid;
+      clip: rect(0, rem(25), rem(50), 0);
+      animation: loading .8s infinite linear;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+}
