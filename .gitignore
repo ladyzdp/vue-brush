@@ -2,8 +2,9 @@
 node_modules
 /dist
 dist.zip
+/vue-brush*
 
-
+*.zip
 # local env files
 .env.local
 .env.*.local

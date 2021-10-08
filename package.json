@@ -3,8 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "serve": "vue-cli-service serve --open",
+        "serve": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode development",
+        "serve:uat": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode uat",
+        "serve:prod": "SET LOCAL_DEBUG=false & vue-cli-service serve --open --mode release",
+        "serve:mock": "SET LOCAL_DEBUG=false & vue-cli-service serve --open --mode mockjs",
+        "serve:mac": "export LOCAL_DEBUG=true && vue-cli-service serve --open --mode development",
+        "serve:mac-mock": "export LOCAL_DEBUG=true && vue-cli-service serve --open --mode mockjs",
         "build": "vue-cli-service build",
+        "build:test": "vue-cli-service build --mode test",
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
