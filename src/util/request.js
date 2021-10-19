@@ -54,7 +54,8 @@ request.interceptors.response.use(async response => {
 
   const res = await response.clone().json();
   const { code, message } = res;
-  if (code !== 0) {
+  console.log('res===',res)
+  if (code !== 1) {
     console.log('请求错误', `${code}: ${message}`);
     // 在处理结果时判断res是否有值即可
     return;
