@@ -1,7 +1,9 @@
 {
-    "name": "vue-brush",
-    "version": "0.1.0",
+    "name": "{{name}}",
+    "version": "{{version}}",
+    "description": "{{description}}",
     "private": true,
+    "author": "{{author}}",
     "scripts": {
         "serve": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode development",
         "serve:uat": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode uat",
