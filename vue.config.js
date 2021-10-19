@@ -1,9 +1,9 @@
 const path = require("path");
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;//打包分析
 const CompressionWebpackPlugin = require('compression-webpack-plugin'); //Gzip
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); // 代码压缩
-const FileManagerPlugin = require('filemanager-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');//生成zip文件
 const isProduction = process.env.NODE_ENV !== 'development';
 const APPID = process.env.VUE_APP_APPID || '';
 const version = '1.0.1';
@@ -12,8 +12,6 @@ const outputDir = APPID || versionName;
 function resolve(dir) {
     return path.join(__dirname, dir);
 }
-console.log('VUE_APP_ENVTYPE===', process.env.VUE_APP_ENVTYPE);
-
 module.exports = {
     outputDir: outputDir,
     chainWebpack: (config) => {
@@ -36,8 +34,6 @@ module.exports = {
         });
     },
     configureWebpack: (config) => {
-
-        // if (isProduction || devNeedCdn) config.externals = cdns.externals;
         if (isProduction) {
             // 代码压缩
             config.plugins.push(
@@ -45,12 +41,12 @@ module.exports = {
                     uglifyOptions: {
                         warnings: false,
                         compress: {
-                            drop_debugger: true, // 注释debugger
-                            drop_console: true, // 注释console
-                            pure_funcs: ['console.log'] // 移除console
+                            drop_debugger: true,
+                            drop_console: true,
+                            pure_funcs: ['console.log']
                         },
                     },
-                    sourceMap: true,
+                    sourceMap: false,
                     parallel: true,
                 })
             );
@@ -63,9 +59,9 @@ module.exports = {
                     test: new RegExp(
                         '\\.(' + productionGzipExtensions.join('|') + ')$'
                     ),
-                    threshold: 10240, // 只有大小大于该值的资源会被处理 10240
-                    minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
-                    deleteOriginalAssets: false // 删除原文件
+                    threshold: 10240,
+                    minRatio: 0.8,
+                    deleteOriginalAssets: false
                 })
             );
 
@@ -73,11 +69,11 @@ module.exports = {
                 new FileManagerPlugin({
                     events: {
                         onEnd: {
-                            mkdir: [`./${outputDir}`], // 新加的一句代码
-                            delete: [   //首先需要删除项目根目录下的dist.zip
+                            mkdir: [`./${outputDir}`],
+                            delete: [   //首先需要删除项目根目录下的outputDir.zip
                                 `./${outputDir}.zip`,
                             ],
-                            archive: [ //然后我们选择dist文件夹将之打包成dist.zip并放在根目录
+                            archive: [ //然后我们选择outputDir文件夹将之打包成outputDir.zip并放在根目录
                                 { source: `./${outputDir}`, destination: `./${outputDir}.zip` },
                             ]
                         }
@@ -92,6 +88,30 @@ module.exports = {
             config.optimization = {
                 splitChunks: {
                     cacheGroups: {
+                        'ant-design-vue': {
+                            name: "ant-design-vue",
+                            test: /[\\/]node_modules[\\/]ant-design-vue[\\/]/,
+                            chunks: "all",
+                            priority: 3,
+                            reuseExistingChunk: true,
+                            enforce: true
+                        },
+                        '@ant-design': {
+                            name: "@ant-design",
+                            test: /[\\/]node_modules[\\/]@ant-design[\\/]/,
+                            chunks: "all",
+                            priority: 4,
+                            reuseExistingChunk: true,
+                            enforce: true
+                        },
+                        'bootstrap-vue': {
+                            name: "bootstrap-vue",
+                            test: /[\\/]node_modules[\\/]bootstrap-vue[\\/]/,
+                            chunks: "all",
+                            priority: 7,
+                            reuseExistingChunk: true,
+                            enforce: true
+                        },
                         'moment': {
                             name: 'moment',
                             test: /[\\/]node_modules[\\/]moment[\\/]/,
@@ -142,16 +162,6 @@ module.exports = {
         },
     },
 
-    // css: {
-    //   loaderOptions: {
-    //     // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效
-    //     // 因为 `scss` 语法在内部也是由 sass-loader 处理的
-    //     // 但是在配置 `prependData` 选项的时候
-    //     // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
-    //     // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
-    //   },
-    // },
-
     // webpack-dev-server 相关配置
     devServer: {
         // 调试端口
@@ -173,7 +183,6 @@ module.exports = {
             entry: './mock/index.js',
             debug: false,
             disable: process.env.VUE_APP_MOCKJS == 'true' ? true : false,
-            // disable: false
         }
     },
 };

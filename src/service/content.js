@@ -1,4 +1,5 @@
-import request from "umi-request";
+// import request from "umi-request";
+import request from "@/util/request";
 
 /**
  *获取验证码
