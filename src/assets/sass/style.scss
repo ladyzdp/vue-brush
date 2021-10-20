@@ -1,13 +1,10 @@
 @charset "UTF-8";
-
 // css3
-@import "common/css3";
-
-// mixin
-@import "common/mixin";
-// 全局设置
-@import "common/setting";
-@import "common/common";
+// @import "common/css3";
+// // mixin
+// @import "common/mixin";
+// // 全局设置
+// @import "common/setting";
+// @import "common/common";
 // 直接写，或者按模块写然后引入
 @import 'page/index';
-
