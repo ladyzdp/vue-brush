@@ -9,7 +9,8 @@ import request from "@/util/request";
  * @returns
  */
 export async function formCaptcha(params) {
-    return request('/api/form/captcha', {
+    return request( {
+        url:'/api/form/captcha',
         method: 'GET',
         params: {
             ...params

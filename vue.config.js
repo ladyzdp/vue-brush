@@ -88,46 +88,46 @@ module.exports = {
             config.optimization = {
                 splitChunks: {
                     cacheGroups: {
-                        'ant-design-vue': {
-                            name: "ant-design-vue",
-                            test: /[\\/]node_modules[\\/]ant-design-vue[\\/]/,
-                            chunks: "all",
-                            priority: 3,
-                            reuseExistingChunk: true,
-                            enforce: true
-                        },
-                        '@ant-design': {
-                            name: "@ant-design",
-                            test: /[\\/]node_modules[\\/]@ant-design[\\/]/,
-                            chunks: "all",
-                            priority: 4,
-                            reuseExistingChunk: true,
-                            enforce: true
-                        },
-                        'bootstrap-vue': {
-                            name: "bootstrap-vue",
-                            test: /[\\/]node_modules[\\/]bootstrap-vue[\\/]/,
-                            chunks: "all",
-                            priority: 7,
-                            reuseExistingChunk: true,
-                            enforce: true
-                        },
-                        'moment': {
-                            name: 'moment',
-                            test: /[\\/]node_modules[\\/]moment[\\/]/,
-                            chunks: "all",
-                            priority: 4,
-                            reuseExistingChunk: true,
-                            enforce: true
-                        },
-                        'vant': {
-                            name: 'vant',
-                            test: /[\\/]node_modules[\\/]vant[\\/]/,
-                            chunks: "all",
-                            priority: 4,
-                            reuseExistingChunk: true,
-                            enforce: true
-                        },
+                        // 'ant-design-vue': {
+                        //     name: "ant-design-vue",
+                        //     test: /[\\/]node_modules[\\/]ant-design-vue[\\/]/,
+                        //     chunks: "all",
+                        //     priority: 3,
+                        //     reuseExistingChunk: true,
+                        //     enforce: true
+                        // },
+                        // '@ant-design': {
+                        //     name: "@ant-design",
+                        //     test: /[\\/]node_modules[\\/]@ant-design[\\/]/,
+                        //     chunks: "all",
+                        //     priority: 4,
+                        //     reuseExistingChunk: true,
+                        //     enforce: true
+                        // },
+                        // 'bootstrap-vue': {
+                        //     name: "bootstrap-vue",
+                        //     test: /[\\/]node_modules[\\/]bootstrap-vue[\\/]/,
+                        //     chunks: "all",
+                        //     priority: 7,
+                        //     reuseExistingChunk: true,
+                        //     enforce: true
+                        // },
+                        // 'moment': {
+                        //     name: 'moment',
+                        //     test: /[\\/]node_modules[\\/]moment[\\/]/,
+                        //     chunks: "all",
+                        //     priority: 4,
+                        //     reuseExistingChunk: true,
+                        //     enforce: true
+                        // },
+                        // 'vant': {
+                        //     name: 'vant',
+                        //     test: /[\\/]node_modules[\\/]vant[\\/]/,
+                        //     chunks: "all",
+                        //     priority: 4,
+                        //     reuseExistingChunk: true,
+                        //     enforce: true
+                        // },
                         'common': {
                             name: "chunk-common",
                             chunks: "initial",
@@ -158,7 +158,7 @@ module.exports = {
     pages: {
         index: {
             entry: "src/main.js",
-            chunks: ['chunk-vendors', 'chunk-common', 'vue', 'vue-router', 'vant', 'moment', 'index']
+            // chunks: ['chunk-vendors', 'chunk-common', 'vue', 'vue-router', 'vant', 'moment', 'index']
         },
     },
 

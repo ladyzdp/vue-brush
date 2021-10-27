@@ -7,7 +7,8 @@ import request from "@/util/request";
  * @returns
  */
 export  function fastNav(params) {
-    return request('/api/home/fastNav', {
+    return request( {
+        url:'/api/home/fastNav',
         method: 'GET',
         params:{
             ...params

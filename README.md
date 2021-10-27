@@ -34,6 +34,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # 内置sass工具 pxtorem 工具自动转换
 
-# 网络请求方案 umi-request
 
 # 打包后自动生成zip压缩包
