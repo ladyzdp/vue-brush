@@ -1,65 +1,115 @@
-import { extend } from "umi-request";
+import axios from "axios";
 const baseUrl = process.env.NODE_ENV === 'production' ? '' : '';
+import storage from "@/util/storageControl";
 
+const service = axios.create({
+  baseURL: `/${baseUrl}`,
+  timeout: 15000, 
+});
+// 添加请求拦截器
+service.interceptors.request.use(
+  (response) => {
 
-const codeMessage = {
-  200: '服务器成功返回请求的数据。',
-  201: '新建或修改数据成功。',
-  202: '一个请求已经进入后台排队（异步任务）。',
-  204: '删除数据成功。',
-  400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
-  401: '用户没有权限（令牌、用户名、密码错误）。',
-  403: '用户得到授权，但是访问是被禁止的。',
-  404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
-  406: '请求的格式不可得。',
-  410: '请求的资源被永久删除，且不会再得到的。',
-  422: '当创建一个对象时，发生一个验证错误。',
-  500: '服务器发生错误，请检查服务器。',
-  502: '网关错误。',
-  503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。',
-};
+    let token = storage.getToken();
 
-const errorHandler = error => {
-  const { response = {} } = error;
-  const errortext = codeMessage[response.status] || response.statusText;
-  const { status, url } = response;
-  console.log(`请求错误 ${status}: ${url}` + errortext);
+    if (response.method == 'post') {
+      response.data = {
+        ...response.data,
+        _t: Date.parse(new Date()) / 1000
+      };
+    } if (response.method == 'get') {
+      response.params = {
+        _t: Date.parse(new Date()) / 1000,
+        ...response.params
+      };
+    }
+    if (token) {
+      //将token放到请求头发送给服务器,将tokenkey放在请求头中
+      response.headers["Token"] = token;
+      return response;
+    }
 
-};
-
-
-
-
-const request = extend({
-  errorHandler,
-  prefix: baseUrl,
-  headers: {
-    Authorization: "tokens", // 携带token
+    return response;
   },
-  credentials: 'include', // 默认请求是否带上cookie
-});
-
-
-request.interceptors.request.use((url, options) => {
-  return {
-    options: {
-      ...options,
-    },
-  };
-});
-
-
-request.interceptors.response.use(async response => {
-
-  const res = await response.clone().json();
-  const { code, message } = res;
-  console.log('res===',res)
-  if (code !== 1) {
-    console.log('请求错误', `${code}: ${message}`);
-    // 在处理结果时判断res是否有值即可
-    return;
+  (error) => {
+    // 对响应错误做点什么
+    return Promise.reject(error.response);
   }
-  return res;
-});
+);
+
+// 添加响应拦截器
+service.interceptors.response.use(
+  (response) => {
+    // 对响应数据做点什么
+    return response.data;
+  },
+  (error) => {
+    // 对响应错误做点什么
+    return Promise.reject(error.response);
+  }
+);
+function errorControl(err){
+  if (err && err.status) {
+    switch (err.status) {
+      case 400:
+        err.message = '错误请求';
+        break;
+      case 401:
+        err.message = '未授权，请重新登录';
+        break;
+      case 403:
+        err.message = '拒绝访问';
+        break;
+      case 404:
+        err.message = '请求错误,未找到该资源';
+        break;
+      case 405:
+        err.message = '请求方法未允许';
+        break;
+      case 408:
+        err.message = '请求超时';
+        break;
+      case 500:
+        err.message = '服务器端出错';
+        break;
+      case 501:
+        err.message = '网络未实现';
+        break;
+      case 502:
+        err.message = '网络错误';
+        break;
+      case 503:
+        err.message = '服务不可用';
+        break;
+      case 504:
+        err.message = '网络超时';
+        break;
+      case 505:
+        err.message = 'http版本不支持该请求';
+        break;
+      default:
+        err.message = `连接错误${err.status}`;
+    }
+    let errData = {
+      message: err.status,
+      description: err.message
+    };
+    console.log(errData)
+    // notification.error(errData);
+}
+}
+const request = (params) => {
+  return new Promise((resolve, reject) => {
+    service(params)
+      .then((res) => {
+
+        resolve(res);
+      })
+      .catch((err) => {
+        // const { status } = err;
+        errorControl(err)
+        reject(err);
+      });
+  });
+};
 export default request;
