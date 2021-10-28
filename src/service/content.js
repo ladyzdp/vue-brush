@@ -12,8 +12,6 @@ export async function formCaptcha(params) {
     return request( {
         url:'/api/form/captcha',
         method: 'GET',
-        params: {
-            ...params
-        }
+        data: params
     });
 }

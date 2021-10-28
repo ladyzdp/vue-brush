@@ -10,8 +10,6 @@ export  function fastNav(params) {
     return request( {
         url:'/api/home/fastNav',
         method: 'GET',
-        params:{
-            ...params
-        }
+        data:params
     });
 }
