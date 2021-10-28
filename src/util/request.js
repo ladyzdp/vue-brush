@@ -20,7 +20,7 @@ service.interceptors.request.use(
     } if (response.method == 'get') {
       response.params = {
         _t: Date.parse(new Date()) / 1000,
-        ...response.params
+        ...response.data
       };
     }
     if (token) {
