@@ -6,12 +6,13 @@
     "author": "",
     "scripts": {
         "serve": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode development",
-        "serve:uat": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode uat",
-        "serve:prod": "SET LOCAL_DEBUG=false & vue-cli-service serve --open --mode release",
+        "serve:uat": "SET LOCAL_DEBUG=true & vue-cli-service serve --open --mode local.uat",
+        "serve:prod": "SET LOCAL_DEBUG=false & vue-cli-service serve --open --mode local.prod",
         "serve:mock": "SET LOCAL_DEBUG=false & vue-cli-service serve --open --mode mockjs",
         "serve:mac": "export LOCAL_DEBUG=true && vue-cli-service serve --open --mode development",
         "serve:mac-mock": "export LOCAL_DEBUG=true && vue-cli-service serve --open --mode mockjs",
         "build": "vue-cli-service build",
+        "build:uat": "vue-cli-service build --mode uat",
         "build:test": "vue-cli-service build --mode test",
         "lint": "vue-cli-service lint"
     },
