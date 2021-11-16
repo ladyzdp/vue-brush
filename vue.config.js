@@ -14,6 +14,7 @@ function resolve(dir) {
 }
 module.exports = {
     outputDir: outputDir,
+    lintOnSave: process.env.NODE_ENV === 'development',
     chainWebpack: (config) => {
         //路径配置
         config.resolve.alias
@@ -176,6 +177,7 @@ module.exports = {
             }
 
         },
+        disableHostCheck: true
     },
     pluginOptions: {
         // 如使用本地mock数据需要把disable设置为false
