@@ -14,7 +14,7 @@ export default {
   mounted() {
 
      fastNav().then(res=>{
-       console.log(res)
+      //  console.log(res)
      })
   },
 };
