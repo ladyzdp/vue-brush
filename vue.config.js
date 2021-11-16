@@ -5,10 +5,10 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin'); //Gzip
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); // 代码压缩
 const FileManagerPlugin = require('filemanager-webpack-plugin');//生成zip文件
 const isProduction = process.env.NODE_ENV !== 'development';
-const APPID = process.env.VUE_APP_APPID || '';
-const version = '1.0.1';
+const APPID = process.env.VUE_APP_APPID;
+const version = '1.0.0';
 const versionName = 'vue-brush' + '-' + version;
-const outputDir = APPID || versionName;
+const outputDir = APPID ? APPID + '-' + version : versionName;
 function resolve(dir) {
     return path.join(__dirname, dir);
 }
